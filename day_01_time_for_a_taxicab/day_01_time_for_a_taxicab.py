@@ -1,7 +1,7 @@
-input_1 = "../inputs_2016/input_01.txt"
-# input_1 = "test_input.txt"
+# input_1 = "../inputs_2016/input_01.txt"
+input_1 = "test_input.txt"
 
-# dirs N:0, E:1, S:2, W: 3
+# dirs N:0, E:1, S:2, W:3
 dirs = {0: 0, 1: 0, 2: 0, 3: 0}
 current_dir = 0
 xy = []

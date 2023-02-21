@@ -10,9 +10,10 @@ with open(input_5, mode="r") as text_file:
 
 num = 0
 password1 = ""
-password2 = ["_" for n in range(8)]
+password2 = [None for n in range(8)]
 string = door_id + str(num)
-while len(password1) < 8 or "_" in password2:
+
+while len(password1) < 8 or None in password2:
     string = door_id + str(num)
     processed_string = hashlib.md5(string.encode()).hexdigest()
     if processed_string[:5] == "00000":
@@ -26,7 +27,7 @@ while len(password1) < 8 or "_" in password2:
             pos = int(processed_string[5])
         except ValueError:
             pass
-        if 0 <= pos <= 7 and password2[pos] == "_":
+        if 0 <= pos <= 7 and not password2[pos]:
             password2[pos] = processed_string[6]
 
     num += 1
